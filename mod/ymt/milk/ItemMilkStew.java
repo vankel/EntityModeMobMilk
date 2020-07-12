@@ -20,16 +20,15 @@ import mod.ymt.cmn.Utils;
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.EntityPlayer;
 import net.minecraft.src.EnumAction;
-import net.minecraft.src.Icon;
-import net.minecraft.src.IconRegister;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemFood;
 import net.minecraft.src.ItemStack;
+import net.minecraft.src.ModLoader;
 import net.minecraft.src.Potion;
 import net.minecraft.src.World;
 
 public class ItemMilkStew extends ItemFood {
-	private Icon[] textures = null;
+	private int[] textures = null;
 
 	public ItemMilkStew(int id) {
 		super(id, 0, 0, false);
@@ -37,11 +36,19 @@ public class ItemMilkStew extends ItemFood {
 		setHasSubtypes(true);
 		setMaxStackSize(1);
 		setPotionEffect(Potion.regeneration.id, 5, 0, 1.0F);
+		textures = new int[2];
+		textures[0] = ModLoader.addOverride("/gui/items.png", "/mod/ymt/milk/milkbowl.png");
+		textures[1] = ModLoader.addOverride("/gui/items.png", "/mod/ymt/milk/milkstew.png");
 	}
 
 	@Override
-	public Icon getIconFromDamage(int metadata) {
+	public int getIconFromDamage(int metadata) {
 		return textures[metadata == 0 ? 0 : 1];
+	}
+
+	@Override
+	public String getItemNameIS(ItemStack stack) {
+		return super.getItemName() + "/" + stack.getItemDamage();
 	}
 
 	@Override
@@ -59,12 +66,7 @@ public class ItemMilkStew extends ItemFood {
 	}
 
 	@Override
-	public String getUnlocalizedName(ItemStack item) {
-		return super.getUnlocalizedName() + "." + item.getItemDamage();
-	}
-
-	@Override
-	public ItemStack onEaten(ItemStack item, World world, EntityPlayer player) {
+	public ItemStack onFoodEaten(ItemStack item, World world, EntityPlayer player) {
 		if (Utils.isServerSide(world)) {
 			// ÉNÉäÉA
 			player.clearActivePotions();
@@ -73,17 +75,9 @@ public class ItemMilkStew extends ItemFood {
 				int foodAmount = item.getMaxDamage() - item.getItemDamage();
 				player.getFoodStats().addStats(foodAmount, 0.6f);
 				world.playSoundAtEntity(player, "random.burp", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
-				onFoodEaten(item, world, player);
 			}
 		}
 		item.stackSize--;
 		return new ItemStack(Item.bowlEmpty);
-	}
-
-	@Override
-	public void updateIcons(IconRegister par1IconRegister) {
-		this.textures = new Icon[]{
-			par1IconRegister.registerIcon("mod.ymt.milkbowl"), par1IconRegister.registerIcon("mod.ymt.milkstew"),
-		};
 	}
 }

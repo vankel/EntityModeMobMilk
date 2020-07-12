@@ -33,7 +33,7 @@ public class mod_MobMilk extends BaseMod {
 
 	@Override
 	public String getVersion() {
-		return "151v2";
+		return "147v1";
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class mod_MobMilk extends BaseMod {
 		// ミルクシチュー追加
 		if (0 < milkStewItemId) {
 			milkStew = new ItemMilkStew(milkStewItemId);
-			milkStew.setUnlocalizedName("milkStew");
+			milkStew.setItemName("milkStew");
 			Utils.addName(milkStew, "milk bowl", "ミルクボウル");
 			Utils.addName(new ItemStack(milkStew, 0, 0), "milk bowl", "ミルクボウル");
 			for (int i = 1; i < milkStew.getMaxDamage(); i++) {

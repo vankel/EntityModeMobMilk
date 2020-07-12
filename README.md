@@ -78,5 +78,6 @@ limitations under the License.
 
 ## History
 
+- 147v1: Minecraft1.4.7に対応
 - 151v2: ミルクボウルとミルクシチューを追加しました
 - 151v1: 初版
