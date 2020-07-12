@@ -28,12 +28,12 @@ public class mod_MobMilk extends BaseMod {
 
 	@Override
 	public String getPriorities() {
-		return "required-after:mod_YMTLib";
+		return "required-after:mod_YMTLib;required-after:mod_LMM_littleMaidMob";
 	}
 
 	@Override
 	public String getVersion() {
-		return "151v2";
+		return "152v1";
 	}
 
 	@Override
@@ -55,7 +55,7 @@ public class mod_MobMilk extends BaseMod {
 			addStewReceipe(Item.beefRaw, 8);
 		}
 		// EntityMode —LŒø‰»
-		MBLMMEntityMode_MobMilk.setEnable(true);
+		WacoEntityMode_MobMilk.setEnable(true);
 	}
 
 	private void addStewReceipe(Item meat, int meatAmount) {

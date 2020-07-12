@@ -81,7 +81,7 @@ public class ItemMilkStew extends ItemFood {
 	}
 
 	@Override
-	public void updateIcons(IconRegister par1IconRegister) {
+	public void registerIcons(IconRegister par1IconRegister) {
 		this.textures = new Icon[]{
 			par1IconRegister.registerIcon("mod.ymt.milkbowl"), par1IconRegister.registerIcon("mod.ymt.milkstew"),
 		};

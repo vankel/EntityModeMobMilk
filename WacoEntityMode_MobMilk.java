@@ -21,14 +21,14 @@ import mod.ymt.cmn.Utils;
  * @author Yamato
  *
  */
-public class MBLMMEntityMode_MobMilk extends LMM_EntityModeBase {
+public class WacoEntityMode_MobMilk extends LMM_EntityModeBase {
 	private static boolean enable = false;
 
 	static {
-		System.out.println("initializing MMLMMEntityMode_MobMilk");
+		System.out.println("initializing WacoEntityMode_MobMilk");
 	}
 
-	public MBLMMEntityMode_MobMilk(LMM_EntityLittleMaid owner) {
+	public WacoEntityMode_MobMilk(LMM_EntityLittleMaid owner) {
 		super(owner);
 	}
 
@@ -65,7 +65,7 @@ public class MBLMMEntityMode_MobMilk extends LMM_EntityModeBase {
 	}
 
 	public static void setEnable(boolean enable) {
-		MBLMMEntityMode_MobMilk.enable = enable;
+		WacoEntityMode_MobMilk.enable = enable;
 	}
 
 	private static boolean tryInteractBottle(EntityPlayer player) {
