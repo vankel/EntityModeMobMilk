@@ -16,6 +16,11 @@
 package net.minecraft.src;
 
 import mod.ymt.cmn.Utils;
+import mod.ymt.milk.mod_MobMilk;
+import net.minecraft.entity.ai.EntityAITasks;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 /**
  * @author Yamato
@@ -61,15 +66,11 @@ public class WacoEntityMode_MobMilk extends LMM_EntityModeBase {
 	}
 
 	public static boolean isEnable() {
-		return enable;
-	}
-
-	public static void setEnable(boolean enable) {
-		WacoEntityMode_MobMilk.enable = enable;
+		return mod_MobMilk.milkStew != null;
 	}
 
 	private static boolean tryInteractBottle(EntityPlayer player) {
-		if (mod_MobMilk.milkStew == null) {	// ƒ~ƒ‹ƒN–¢“o˜^‚Ì‚Æ‚«‚Í‰½‚à‚µ‚È‚¢
+		if (mod_MobMilk.milkStew == null) {	// ãƒŸãƒ«ã‚¯æœªç™»éŒ²ã®ã¨ãã¯ä½•ã‚‚ã—ãªã„
 			return false;
 		}
 		ItemStack item = player.getCurrentEquippedItem();

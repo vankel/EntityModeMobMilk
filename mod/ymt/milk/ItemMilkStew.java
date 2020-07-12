@@ -17,16 +17,16 @@ package mod.ymt.milk;
 
 import java.util.List;
 import mod.ymt.cmn.Utils;
-import net.minecraft.src.CreativeTabs;
-import net.minecraft.src.EntityPlayer;
-import net.minecraft.src.EnumAction;
-import net.minecraft.src.Icon;
-import net.minecraft.src.IconRegister;
-import net.minecraft.src.Item;
-import net.minecraft.src.ItemFood;
-import net.minecraft.src.ItemStack;
-import net.minecraft.src.Potion;
-import net.minecraft.src.World;
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumAction;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.util.Icon;
+import net.minecraft.world.World;
 
 public class ItemMilkStew extends ItemFood {
 	private Icon[] textures = null;
@@ -68,10 +68,10 @@ public class ItemMilkStew extends ItemFood {
 	@Override
 	public ItemStack onEaten(ItemStack item, World world, EntityPlayer player) {
 		if (Utils.isServerSide(world)) {
-			// ƒNƒŠƒA
+			// ã‚¯ãƒªã‚¢
 			player.clearActivePotions();
-			if (item.getItemDamage() > 0) { // –• “xã¸
-				// player.getFoodStats().addStats(8, 0.8f);	// 8, 0.8 ‚ª‹ƒXƒe[ƒL‚Æ“¯‚¶‰ñ•œ—Ê
+			if (item.getItemDamage() > 0) { // æº€è…¹åº¦ä¸Šæ˜‡
+				// player.getFoodStats().addStats(8, 0.8f);	// 8, 0.8 ãŒç‰›ã‚¹ãƒ†ãƒ¼ã‚­ã¨åŒã˜å›å¾©é‡
 				int foodAmount = item.getMaxDamage() - item.getItemDamage();
 				player.getFoodStats().addStats(foodAmount, 0.6f);
 				world.playSoundAtEntity(player, "random.burp", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);

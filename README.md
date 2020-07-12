@@ -13,10 +13,10 @@ littleMaidMob のメイドさんからミルクが採取できるようになる
 
 ## 前提
 
-- Minecraft 1.6.2
-- ModLoader 1.6.2
-- YMTLib_162v1
-- MMM 氏制作の littleMaidMob が必要です。
+- Minecraft 1.6.4
+- ModLoader 1.6.4
+- YMTLib_164v1
+- MMM 氏が製作し、Tinyred 氏が 1.6.4 向けに修正した littleMaidMob-1_6_4-kai-1 が必要です。
 
 
 ## 導入
@@ -80,6 +80,7 @@ limitations under the License.
 
 ## History
 
+- 164v1: Minecraft1.6.4に対応しました
 - 162v1: Minecraft1.6.2に対応しました
 - 152v1: Minecraft1.5.2に対応しました
 - 151v2: ミルクボウルとミルクシチューを追加しました
