@@ -33,7 +33,7 @@ public class mod_MobMilk extends BaseMod {
 
 	@Override
 	public String getVersion() {
-		return "152v1";
+		return "162v1";
 	}
 
 	@Override

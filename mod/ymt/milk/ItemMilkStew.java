@@ -41,6 +41,8 @@ public class ItemMilkStew extends ItemFood {
 
 	@Override
 	public Icon getIconFromDamage(int metadata) {
+		if (textures == null)
+			return null;
 		return textures[metadata == 0 ? 0 : 1];
 	}
 
